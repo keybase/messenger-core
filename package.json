@@ -23,9 +23,10 @@
   "dependencies": {
     "keybase-bjson-core": "0.0.3",
     "iced-utils": "^0.1.14",
-    "iced-coffee-script": "^1.7.1-b"
+    "iced-coffee-script": "^1.7.1-b",
+    "triplesec": "^3.0.12"
   },
-  "devDependencies" : {
+  "devDependencies": {
     "iced-test": "0.0.15",
     "minimist": "^0.1.0"
   }
