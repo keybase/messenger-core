@@ -14,7 +14,6 @@ test_id = (T,type,i) ->
   T.no_error err
   T.waypoint "Check #{type} #{i}"
 
-
 for k,v of main.const.id
   ((type) ->
     exports["test_#{type}"] = (T, cb) -> test_id_type T, type, cb
