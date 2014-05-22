@@ -1,0 +1,27 @@
+{
+  "name": "keybase-messenger-core",
+  "version": "0.0.0",
+  "description": "Core shared libraries for messenger server and clients",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/keybase/messenger-core"
+  },
+  "keywords": [
+    "Keybase",
+    "messenger"
+  ],
+  "author": "Maxwell Krohn",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/keybase/messenger-core/issues"
+  },
+  "homepage": "https://github.com/keybase/messenger-core",
+  "dependencies": {
+    "keybase-bjson-core": "0.0.3",
+    "iced-utils": "^0.1.14"
+  }
+}
