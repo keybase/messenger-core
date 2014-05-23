@@ -1,10 +1,11 @@
-tsec                   = require 'triplesec'
-{WordArray,hmac,prng}  = tsec
-{AES}                  = tsec.ciphers
-{CTR}                  = tsec.modes
-{pack}                 = require 'purepack'
-{bufeq_secure}         = require('iced-utils').util
-C                      = require './const'
+tsec                       = require 'triplesec'
+{WordArray,hmac,prng,HMAC} = tsec
+{AES}                      = tsec.ciphers
+{CTR}                      = tsec.modes
+{pack}                     = require 'purepack'
+{bufeq_secure}             = require('iced-utils').util
+C                          = require './const'
+{check_template,checkers}  = require 'keybase-bjson-core'
 
 #==========================================================================================
 
@@ -46,6 +47,16 @@ exports.Cipher = class Cipher
     key = new Key {}
     await key.generate defer()
     cb key
+
+  #---------
+
+  @checker : (x) ->
+    check_template [
+      @V,
+      checkers.buffer(0)
+      checkers.buffer(AES.ivSize, AES.ivSize)
+      checkers.buffer(HMAC.outputSize, HMAC.outputSize)
+    ], x, "ciphertext"
 
   #---------
 

@@ -9,6 +9,9 @@ exports.test_cipher = (T,cb) ->
   cipher = new Cipher { key }
   await cipher.encrypt dat, defer ctext
   T.assert ctext?, "cipher came back"
+  checker = Cipher.checker
+  err = checker(ctext)
+  T.no_error err, "no checker error"
   await cipher.decrypt ctext, defer err, dat2
   T.no_error err
   T.assert dat2?, "dat2 came back"
