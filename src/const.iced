@@ -1,4 +1,7 @@
 module.exports = 
+  protocol :
+    version : 
+      V1 : 1
   id :
     thread : 
       byte_length : 16

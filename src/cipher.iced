@@ -4,6 +4,7 @@ tsec                   = require 'triplesec'
 {CTR}                  = tsec.modes
 {pack}                 = require 'purepack'
 {bufeq_secure}         = require('iced-utils').util
+C                      = require './const'
 
 #==========================================================================================
 
@@ -31,7 +32,7 @@ class Key
 
 exports.Cipher = class Cipher
 
-  @V : 1
+  @V : C.protocol.version.V1
   V : Cipher.V
 
   #---------

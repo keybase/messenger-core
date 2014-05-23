@@ -11,7 +11,7 @@ lib/%.js: src/%.iced
 
 $(BUILD_STAMP): \
 	lib/const.js \
-        lib/cipher.js \
+	lib/cipher.js \
 	lib/id.js \
 	lib/main.js
 	date > $@
