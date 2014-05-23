@@ -5,7 +5,8 @@ tsec                       = require 'triplesec'
 {pack}                     = require 'purepack'
 {bufeq_secure}             = require('iced-utils').util
 C                          = require './const'
-{check_template,checkers}  = require 'keybase-bjson-core'
+
+{encode,check_template,checkers}  = require 'keybase-bjson-core'
 
 #==========================================================================================
 
@@ -57,6 +58,11 @@ exports.Cipher = class Cipher
       checkers.buffer(AES.ivSize, AES.ivSize)
       checkers.buffer(HMAC.outputSize, HMAC.outputSize)
     ], x, "ciphertext"
+
+  #---------
+
+  @encode_to_db : (x) ->
+    encode({ obj : x, encoding : 'msgpack64' }).toString('utf8')
 
   #---------
 
