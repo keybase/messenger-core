@@ -24,6 +24,7 @@
     "iced-coffee-script": "^1.7.1-b",
     "iced-utils": "^0.1.14",
     "keybase-bjson-core": "0.0.3",
+    "pgp-utils": "0.0.20",
     "purepack": "^1.0.0",
     "triplesec": "^3.0.13"
   },

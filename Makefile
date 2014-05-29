@@ -10,6 +10,7 @@ lib/%.js: src/%.iced
 	$(ICED) -I node -c -o `dirname $@` $<
 
 $(BUILD_STAMP): \
+	lib/pgp.js \
 	lib/const.js \
 	lib/cipher.js \
 	lib/id.js \
