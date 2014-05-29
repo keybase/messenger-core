@@ -66,6 +66,10 @@ exports.Cipher = class Cipher
 
   #---------
 
+  @encode_to_stream : (x) -> encode { obj : x, encoding : 'msgpack' }
+
+  #---------
+
   hmac : ({c,iv}, cb) ->
     buf = pack [ @V, c, iv ]
     await hmac.bulk_sign { key : @key.m, input : WordArray.from_buffer(buf) }, defer b
